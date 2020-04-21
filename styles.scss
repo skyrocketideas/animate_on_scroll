@@ -1,0 +1,50 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin center-v() {
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	margin: auto;
+}
+
+h1 {
+	font-size: 100px;
+}
+
+.item {
+	display: flex;
+	height: 100vh;
+	text-align: center;
+	justify-content: center;
+	flex-direction: column;
+	&--primary {
+		@include center-v;
+		right: 20px;
+		background: green;
+	}
+}
+
+[data-aos="anim2"] {
+	background: red;
+	transition-property: background;
+	&.aos-animate {
+		background: yellowgreen;
+	}
+}
+
+[data-aos="anim3"] {
+	background-color: blueviolet;
+	padding: 3rem;
+	transform: rotate(360deg);
+	opacity: 0;
+	transition-property: transform, opacity;
+	&.aos-animate {
+		transform: rotate(0);
+		opacity: 1;
+	}
+}
